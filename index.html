@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Fylo data storage component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+
+      body {
+        margin: 0;
+      }
+
+      :root {
+        font-family: "Raleway", sans-serif;
+        font-size: 14px;
+        --Pale-Blue: hsl(243, 100%, 93%);
+        --Grayish-Blue: hsl(229, 7%, 55%);
+        --Dark-Blue: hsl(228, 56%, 26%);
+        --Very-Dark-Blue: hsl(229, 57%, 11%);
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+      }
+
+      .header,
+      .content {
+        background: var(--Dark-Blue);
+      }
+
+      .header {
+        border-radius: 10px 100px 10px 10px;
+        padding: 3em;
+      }
+
+      .upload-options {
+        display: flex;
+        gap: 1em;
+        margin: 2.5em auto 0em auto;
+      }
+
+      .upload {
+        position: relative;
+        padding: 0.2em;
+        border-radius: 10px;
+        background: var(--Very-Dark-Blue);
+        width: 45px;
+        height: 45px;
+      }
+
+      .upload img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .content {
+        border-radius: 10px;
+        color: var(--Pale-Blue);
+        position: relative;
+        padding: 1em 2em 3.5em 2em;
+      }
+
+      .content p {
+        text-align: center;
+      }
+
+      .progress {
+        height: 15px;
+        border: 3px solid var(--Very-Dark-Blue);
+        border-radius: 10px;
+        background: var(--Very-Dark-Blue);
+        margin: 1.2em auto 0.8em auto;
+      }
+
+      .gradient {
+        width: 80%;
+        background: linear-gradient(hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+        height: 15px;
+        border-radius: 10px;
+        position: relative;
+      }
+
+      .white-marker {
+        position: absolute;
+        right: 2px;
+        top: 1.5px;
+        width: 11px;
+        height: 11px;
+        background: white;
+        border-radius: 50%;
+      }
+
+      .range {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .gb-left {
+        position: absolute;
+        border-radius: 10px;
+        top: 125px;
+        left: 75px;
+        background-color: white;
+        color: var(--Very-Dark-Blue);
+        font-weight: 700;
+        font-size: 3rem;
+        padding: 0.25em 0.5em;
+      }
+
+      .gb-left span {
+        color: var(--Grayish-Blue);
+        font-size: 0.9rem;
+        vertical-align: middle;
+      }
+
+      .attribution {
+        color: var(--Pale-Blue);
+        font-size: 11px;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+
+      @media screen and (max-width: 700px) {
+        body {
+          background: url("images/bg-mobile.png") no-repeat;
+          background-size: 100vh;
+        }
+
+        .container {
+          width: 325px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      @media screen and (min-width: 700px) {
+        body {
+          height: 100vh;
+        }
+
+        html {
+          background: url("images/bg-desktop.png") no-repeat center bottom
+            var(--Very-Dark-Blue);
+          background-size: contain;
+        }
+
+        .container {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 320px;
+        }
+      }
+
+      @media screen and (min-width: 1000px) {
+        .container {
+          flex-direction: row;
+          width: auto;
+        }
+
+        .content {
+          max-width: 800px;
+          width: 500px;
+          padding: 2em;
+          margin-top: 4em;
+        }
+
+        .content p {
+          text-align: left;
+        }
+
+        .progress {
+          margin: 1.5em auto 0.5em auto;
+        }
+
+        .gb-left {
+          top: -20px;
+          left: 340px;
+        }
+
+        .gb-left::after {
+          content: "";
+          position: absolute;
+          border: 15px solid transparent;
+          border-right-color: white;
+          border-bottom-color: white;
+          transform: rotate(135deg);
+          top: 56px;
+          left: 157px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <img src="images/logo.svg" alt="Fylo logo" class="logo" />
+        <div class="upload-options">
+          <div class="upload">
+            <img src="images/icon-document.svg" alt="document" />
+          </div>
+          <div class="upload">
+            <img src="images/icon-folder.svg" alt="folder" />
+          </div>
+          <div class="upload">
+            <img src="images/icon-upload.svg" alt="uploads" />
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <p>You’ve used <b>815 GB</b> of your storage</p>
+        <div class="progress">
+          <div class="gradient">
+            <div class="white-marker"></div>
+          </div>
+        </div>
+        <div class="range"><b>0 GB</b> <b>1000 GB</b></div>
+        <div class="gb-left">
+          <b>185</b>
+          <span>GB LEFT</span>
+        </div>
+      </div>
+    </div>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="https://codepen.io/Mr-RO13OT/">Mr.Robot</a>.
+    </div>
+  </body>
+</html>
