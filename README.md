@@ -14,7 +14,7 @@
 
 ## Overview
 
-Created NEWBIE data storage component.
+Created JUNIOR data storage component.
 
 ### The challenge
 
