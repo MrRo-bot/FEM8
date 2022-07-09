@@ -14,7 +14,7 @@
 
 ## Overview
 
-Creating a data storage component.
+Created NEWBIE data storage component.
 
 ### The challenge
 
@@ -26,8 +26,8 @@ Using Flexbox properties and positioning.
 
 ### Links
 
-- GITHUB REPO: [https://github.com/MrRo-bot/FEM8]
-- Solution URL: [https://codepen.io/Mr-RO13OT/pen/YzNBmBW]
+- GITHUB REPO: [https://github.com/MrRo-bot/fylo-data-storage-component]
+- Solution URL: [https://codepen.io/Mr-RO13OT/full/YzNBmBW]
 
 ## My process
 
